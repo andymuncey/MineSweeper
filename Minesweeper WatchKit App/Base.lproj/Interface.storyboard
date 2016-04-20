@@ -1,15 +1,235 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Minesweeper_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="iHd-2Y-Sah">
+                            <items>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="gKx-Pq-TGG">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_0" destination="AgC-eL-Hgc" id="epu-ln-VKe"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="bFa-M9-RRb">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_1" destination="AgC-eL-Hgc" id="SyX-eU-8Vy"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="0sx-1m-sV3">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_2" destination="AgC-eL-Hgc" id="HsG-Fn-bqV"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="Bey-9M-TLM">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_3" destination="AgC-eL-Hgc" id="Qkn-ma-9BD"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="O6D-cf-YUv">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_4" destination="AgC-eL-Hgc" id="2wf-FX-mpf"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="07w-zi-YO8">
+                            <items>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="0uz-Pz-hAJ">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine1_0" destination="AgC-eL-Hgc" id="EE5-IV-agS"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="IFJ-Iu-dWr">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine1_1" destination="AgC-eL-Hgc" id="kX0-id-fhq"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="BW9-Qy-5qK">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine1_2" destination="AgC-eL-Hgc" id="3xy-wn-HLs"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="sXz-Eh-GSj">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine1_3" destination="AgC-eL-Hgc" id="7NU-ad-GHk"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="1i6-EF-yeL">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine1_4" destination="AgC-eL-Hgc" id="NWD-jO-C7U"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="htR-2d-HH7">
+                            <items>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="Qpc-C4-QYa">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine2_0" destination="AgC-eL-Hgc" id="HcO-Su-ls7"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="dLT-87-Liq">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine2_1" destination="AgC-eL-Hgc" id="tpT-ey-ikn"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="U9a-fS-MWM">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine2_2" destination="AgC-eL-Hgc" id="Qf4-Cc-0UH"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="ezy-JL-zgA">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine2_3" destination="AgC-eL-Hgc" id="qRO-dm-8ZF"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="Isi-XU-0kC">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine2_4" destination="AgC-eL-Hgc" id="Pc9-4O-IhB"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="O7e-Oc-B82">
+                            <items>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="fPV-3g-RZ5">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine3_0" destination="AgC-eL-Hgc" id="KTb-iI-YZj"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="bUl-qg-L4N">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine3_1" destination="AgC-eL-Hgc" id="9wV-Sx-PoM"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="X4g-hA-qdb">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine3_2" destination="AgC-eL-Hgc" id="d97-m5-85j"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="YaU-WA-Eb1">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine3_3" destination="AgC-eL-Hgc" id="Pmh-zb-emd"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="eu6-d9-EeE">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine3_4" destination="AgC-eL-Hgc" id="Rmc-dm-fZY"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="QLX-jX-boz">
+                            <items>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="51L-8p-5Fe">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine4_0" destination="AgC-eL-Hgc" id="dLL-Wt-qnP"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="Win-zs-Tqx">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine4_1" destination="AgC-eL-Hgc" id="ApJ-PW-i7j"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="09W-e1-0fE">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine4_2" destination="AgC-eL-Hgc" id="Dqt-wp-fuh"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="SPj-oc-Zf2">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine4_3" destination="AgC-eL-Hgc" id="0DS-hM-L2M"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="8Qt-t4-0Jt">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine4_4" destination="AgC-eL-Hgc" id="wrO-Fk-kS1"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="e42-QD-GDf">
+                            <items>
+                                <label alignment="right" text="5 x" id="mh0-4h-mD8"/>
+                                <button width="0.20000000000000001" height="1" alignment="right" title="🇰🇵" id="pcN-GM-l0p">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="toggleFlag" destination="AgC-eL-Hgc" id="gLy-bc-wBH"/>
+                                    </connections>
+                                </button>
+                                <button height="1" alignment="left" title="Reset" id="yNE-yY-Zmf">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="resetPressed" destination="AgC-eL-Hgc" id="bNe-cS-I4m"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="flagButton" destination="pcN-GM-l0p" id="Gta-b4-J5f"/>
+                        <outlet property="mineCountLabel" destination="mh0-4h-mD8" id="TwA-hV-2gR"/>
+                        <outlet property="mineSpace0_0" destination="gKx-Pq-TGG" id="Onn-lC-tMz"/>
+                        <outlet property="mineSpace0_1" destination="bFa-M9-RRb" id="gsF-Ra-tnZ"/>
+                        <outlet property="mineSpace0_2" destination="0sx-1m-sV3" id="9SI-YD-N15"/>
+                        <outlet property="mineSpace0_3" destination="Bey-9M-TLM" id="Jg5-n8-DCP"/>
+                        <outlet property="mineSpace0_4" destination="O6D-cf-YUv" id="G8k-Ah-VEX"/>
+                        <outlet property="mineSpace1_0" destination="0uz-Pz-hAJ" id="fJC-tK-fUl"/>
+                        <outlet property="mineSpace1_1" destination="IFJ-Iu-dWr" id="whB-io-9eu"/>
+                        <outlet property="mineSpace1_2" destination="BW9-Qy-5qK" id="wrM-o2-2DF"/>
+                        <outlet property="mineSpace1_3" destination="sXz-Eh-GSj" id="hAf-0v-7Nz"/>
+                        <outlet property="mineSpace1_4" destination="1i6-EF-yeL" id="WeG-Tv-C85"/>
+                        <outlet property="mineSpace2_0" destination="Qpc-C4-QYa" id="4Bh-cW-Nwa"/>
+                        <outlet property="mineSpace2_1" destination="dLT-87-Liq" id="g9q-kY-6cw"/>
+                        <outlet property="mineSpace2_2" destination="U9a-fS-MWM" id="3sp-6B-Uoy"/>
+                        <outlet property="mineSpace2_3" destination="ezy-JL-zgA" id="8Hd-ET-gSJ"/>
+                        <outlet property="mineSpace2_4" destination="Isi-XU-0kC" id="PlQ-U5-YdX"/>
+                        <outlet property="mineSpace3_0" destination="fPV-3g-RZ5" id="QCW-BM-oka"/>
+                        <outlet property="mineSpace3_1" destination="bUl-qg-L4N" id="sjK-9k-7PQ"/>
+                        <outlet property="mineSpace3_2" destination="X4g-hA-qdb" id="Z1g-5v-arM"/>
+                        <outlet property="mineSpace3_3" destination="YaU-WA-Eb1" id="7Xy-KX-ktJ"/>
+                        <outlet property="mineSpace3_4" destination="eu6-d9-EeE" id="cez-9b-GxS"/>
+                        <outlet property="mineSpace4_0" destination="51L-8p-5Fe" id="fhn-hv-k0u"/>
+                        <outlet property="mineSpace4_1" destination="Win-zs-Tqx" id="2K1-Gq-4zX"/>
+                        <outlet property="mineSpace4_2" destination="09W-e1-0fE" id="46h-at-soB"/>
+                        <outlet property="mineSpace4_3" destination="SPj-oc-Zf2" id="08z-Dg-UFD"/>
+                        <outlet property="mineSpace4_4" destination="8Qt-t4-0Jt" id="GAl-HJ-PS7"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="440" y="317"/>
         </scene>
     </scenes>
 </document>
