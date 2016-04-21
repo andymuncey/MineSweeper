@@ -23,6 +23,8 @@
 		49A30C931CC7975800359888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A30C921CC7975800359888 /* Assets.xcassets */; };
 		49A30CA91CC79B8000359888 /* Minesweeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A30CA81CC79B8000359888 /* Minesweeper.swift */; };
 		49A30CAA1CC79B8000359888 /* Minesweeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A30CA81CC79B8000359888 /* Minesweeper.swift */; };
+		49A30CAC1CC7D27B00359888 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A30CAB1CC7D27B00359888 /* Point.swift */; };
+		49A30CAD1CC7D27B00359888 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A30CAB1CC7D27B00359888 /* Point.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,7 @@
 		49A30C921CC7975800359888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A30C941CC7975900359888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49A30CA81CC79B8000359888 /* Minesweeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Minesweeper.swift; path = "Minesweeper WatchKit App/Minesweeper.swift"; sourceTree = SOURCE_ROOT; };
+		49A30CAB1CC7D27B00359888 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				49A30CA81CC79B8000359888 /* Minesweeper.swift */,
+				49A30CAB1CC7D27B00359888 /* Point.swift */,
 				49A30C551CC7975700359888 /* AppDelegate.swift */,
 				49A30C571CC7975700359888 /* ViewController.swift */,
 				49A30C591CC7975700359888 /* Main.storyboard */,
@@ -408,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A30CAC1CC7D27B00359888 /* Point.swift in Sources */,
 				49A30CA91CC79B8000359888 /* Minesweeper.swift in Sources */,
 				49A30C581CC7975700359888 /* ViewController.swift in Sources */,
 				49A30C561CC7975700359888 /* AppDelegate.swift in Sources */,
@@ -434,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A30CAD1CC7D27B00359888 /* Point.swift in Sources */,
 				49A30CAA1CC79B8000359888 /* Minesweeper.swift in Sources */,
 				49A30C911CC7975800359888 /* ExtensionDelegate.swift in Sources */,
 				49A30C8F1CC7975800359888 /* InterfaceController.swift in Sources */,

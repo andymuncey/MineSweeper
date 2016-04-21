@@ -8,21 +8,6 @@
 
 import Foundation
 
-class Point : Equatable{
-    
-    var x: Int
-    var y: Int
-    
-    init(x: Int, y: Int){
-        self.x = x
-        self.y = y
-    }
-}
-
-func ==(lhs: Point, rhs: Point) -> Bool {
-    return lhs.x == rhs.x && lhs.y == rhs.y
-}
-
 struct MineInfo {
     var isMine = false
     var adjacentMineCount = 0
@@ -53,7 +38,6 @@ class MineField {
         }
     }
     
-    
     func checkMine(point: Point) -> MineInfo{
         if !hasStarted{
             hasStarted = true
@@ -69,7 +53,6 @@ class MineField {
         mineInfo.isMine = location.isMine
         return mineInfo
     }
-    
     
     func determineMinesWithStartPoint(point: Point){
        

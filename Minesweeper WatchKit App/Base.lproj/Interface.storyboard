@@ -231,5 +231,49 @@
             </objects>
             <point key="canvasLocation" x="440" y="317"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="AEp-ox-3v8">
+            <objects>
+                <controller id="tuS-Pv-OEL">
+                    <items>
+                        <group width="1" height="0.14999999999999999" alignment="left" id="5Jd-CM-Z0e">
+                            <items>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="rUq-nU-CP7">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_0" destination="AgC-eL-Hgc" id="DJd-Ms-tYS"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="Dz9-Lg-LfG">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_1" destination="AgC-eL-Hgc" id="A44-Sh-Y9b"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="psI-zN-Mn9">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_2" destination="AgC-eL-Hgc" id="ymT-QE-XfM"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="gQO-jR-kXp">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_3" destination="AgC-eL-Hgc" id="DmW-Gp-wMx"/>
+                                    </connections>
+                                </button>
+                                <button width="0.20000000000000001" height="1" alignment="left" id="zEo-Sl-SRH">
+                                    <color key="backgroundColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="checkMine0_4" destination="AgC-eL-Hgc" id="Wjr-Xj-cXm"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="70" y="368"/>
+        </scene>
     </scenes>
 </document>
