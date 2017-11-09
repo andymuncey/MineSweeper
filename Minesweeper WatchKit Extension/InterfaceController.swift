@@ -1,11 +1,3 @@
-//
-//  InterfaceController.swift
-//  Minesweeper WatchKit Extension
-//
-//  Created by Andrew Muncey on 20/04/2016.
-//  Copyright © 2016 Andrew Muncey. All rights reserved.
-//
-
 import WatchKit
 import Foundation
 
@@ -47,35 +39,35 @@ class InterfaceController: WKInterfaceController {
     
     //MARK: UI Actions
     
-    @IBAction func checkMine0_0() { checkPoint(Point(x: 0, y: 0)) }
-    @IBAction func checkMine0_1() { checkPoint(Point(x: 1, y: 0)) }
-    @IBAction func checkMine0_2() { checkPoint(Point(x: 2, y: 0)) }
-    @IBAction func checkMine0_3() { checkPoint(Point(x: 3, y: 0)) }
-    @IBAction func checkMine0_4() { checkPoint(Point(x: 4, y: 0)) }
+    @IBAction func checkMine0_0() { check(point:Point(x: 0, y: 0)) }
+    @IBAction func checkMine0_1() { check(point:Point(x: 1, y: 0)) }
+    @IBAction func checkMine0_2() { check(point:Point(x: 2, y: 0)) }
+    @IBAction func checkMine0_3() { check(point:Point(x: 3, y: 0)) }
+    @IBAction func checkMine0_4() { check(point:Point(x: 4, y: 0)) }
     
-    @IBAction func checkMine1_0() { checkPoint(Point(x: 0, y: 1)) }
-    @IBAction func checkMine1_1() { checkPoint(Point(x: 1, y: 1)) }
-    @IBAction func checkMine1_2() { checkPoint(Point(x: 2, y: 1)) }
-    @IBAction func checkMine1_3() { checkPoint(Point(x: 3, y: 1)) }
-    @IBAction func checkMine1_4() { checkPoint(Point(x: 4, y: 1)) }
+    @IBAction func checkMine1_0() { check(point:Point(x: 0, y: 1)) }
+    @IBAction func checkMine1_1() { check(point:Point(x: 1, y: 1)) }
+    @IBAction func checkMine1_2() { check(point:Point(x: 2, y: 1)) }
+    @IBAction func checkMine1_3() { check(point:Point(x: 3, y: 1)) }
+    @IBAction func checkMine1_4() { check(point:Point(x: 4, y: 1)) }
     
-    @IBAction func checkMine2_0() { checkPoint(Point(x: 0, y: 2)) }
-    @IBAction func checkMine2_1() { checkPoint(Point(x: 1, y: 2)) }
-    @IBAction func checkMine2_2() { checkPoint(Point(x: 2, y: 2)) }
-    @IBAction func checkMine2_3() { checkPoint(Point(x: 3, y: 2)) }
-    @IBAction func checkMine2_4() { checkPoint(Point(x: 4, y: 2)) }
+    @IBAction func checkMine2_0() { check(point:Point(x: 0, y: 2)) }
+    @IBAction func checkMine2_1() { check(point:Point(x: 1, y: 2)) }
+    @IBAction func checkMine2_2() { check(point:Point(x: 2, y: 2)) }
+    @IBAction func checkMine2_3() { check(point:Point(x: 3, y: 2)) }
+    @IBAction func checkMine2_4() { check(point:Point(x: 4, y: 2)) }
     
-    @IBAction func checkMine3_0() { checkPoint(Point(x: 0, y: 3)) }
-    @IBAction func checkMine3_1() { checkPoint(Point(x: 1, y: 3)) }
-    @IBAction func checkMine3_2() { checkPoint(Point(x: 2, y: 3)) }
-    @IBAction func checkMine3_3() { checkPoint(Point(x: 3, y: 3)) }
-    @IBAction func checkMine3_4() { checkPoint(Point(x: 4, y: 3)) }
+    @IBAction func checkMine3_0() { check(point:Point(x: 0, y: 3)) }
+    @IBAction func checkMine3_1() { check(point:Point(x: 1, y: 3)) }
+    @IBAction func checkMine3_2() { check(point:Point(x: 2, y: 3)) }
+    @IBAction func checkMine3_3() { check(point:Point(x: 3, y: 3)) }
+    @IBAction func checkMine3_4() { check(point:Point(x: 4, y: 3)) }
     
-    @IBAction func checkMine4_0() { checkPoint(Point(x: 0, y: 4)) }
-    @IBAction func checkMine4_1() { checkPoint(Point(x: 1, y: 4)) }
-    @IBAction func checkMine4_2() { checkPoint(Point(x: 2, y: 4)) }
-    @IBAction func checkMine4_3() { checkPoint(Point(x: 3, y: 4)) }
-    @IBAction func checkMine4_4() { checkPoint(Point(x: 4, y: 4)) }
+    @IBAction func checkMine4_0() { check(point:Point(x: 0, y: 4)) }
+    @IBAction func checkMine4_1() { check(point:Point(x: 1, y: 4)) }
+    @IBAction func checkMine4_2() { check(point:Point(x: 2, y: 4)) }
+    @IBAction func checkMine4_3() { check(point:Point(x: 3, y: 4)) }
+    @IBAction func checkMine4_4() { check(point:Point(x: 4, y: 4)) }
     
     @IBAction func resetPressed()
     {
@@ -96,7 +88,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func toggleFlag() {
         if minefield.hasStarted{
             flag = !flag
-            flagButton.setBackgroundColor(flag ? UIColor.redColor() : UIColor.clearColor())
+            flagButton.setBackgroundColor(flag ? UIColor.red : UIColor.clear)
         }
     }
     
@@ -106,7 +98,7 @@ class InterfaceController: WKInterfaceController {
     var flaggedCells = [WKInterfaceButton]()
     var clearedCells = [WKInterfaceButton]()
     
-    func checkPoint(point: Point){
+    func check(point: Point){
         
         if minefield.isExploded {
             return
@@ -115,12 +107,12 @@ class InterfaceController: WKInterfaceController {
         let cell = possibleMines[point.y][point.x]
         
         if !flag && flaggedCells.contains(cell){
-            deFlagCell(cell)
+            deFlag(cell: cell)
             return
         }
         
         if flag && !clearedCells.contains(cell) {
-            flagCell(cell)
+            flag(cell: cell)
             checkForCompletion()
             return
         }
@@ -128,7 +120,7 @@ class InterfaceController: WKInterfaceController {
         let status = minefield.checkMine(point)
         if status.isMine {
             showAllMines()
-            WKInterfaceDevice().playHaptic(.Failure)
+            WKInterfaceDevice().play(.failure)
             return
         }
         
@@ -140,7 +132,7 @@ class InterfaceController: WKInterfaceController {
     func checkForCompletion(){
         if clearedCells.count + flaggedCells.count == 25 {
             mineCountLabel.setText("👍")
-            WKInterfaceDevice().playHaptic(.Success)
+            WKInterfaceDevice().play(.success)
         }
     }
     
@@ -151,14 +143,14 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func deFlagCell(cell: WKInterfaceButton){
+    func deFlag(cell: WKInterfaceButton){
         //clearing a flag from a cell
         cell.setTitle("")
-        flaggedCells.removeAtIndex(flaggedCells.indexOf(cell)!)
+        flaggedCells.remove(at: flaggedCells.index(of: cell)!)
         updateMineCountLabel()
     }
     
-    func flagCell(cell: WKInterfaceButton){
+    func flag(cell: WKInterfaceButton){
         if !flaggedCells.contains(cell){
             cell.setTitle("🇰🇵")
             flaggedCells.append(cell)
@@ -176,6 +168,8 @@ class InterfaceController: WKInterfaceController {
         for _ in 0..<5{
             possibleMines.append([WKInterfaceButton]())
         }
+        
+        
         
         //add mines to array
         possibleMines[0].append(mineSpace0_0)
