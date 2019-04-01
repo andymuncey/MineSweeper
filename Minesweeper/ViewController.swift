@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Minesweeper
-//
-//  Created by Andrew Muncey on 20/04/2016.
-//  Copyright © 2016 Andrew Muncey. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

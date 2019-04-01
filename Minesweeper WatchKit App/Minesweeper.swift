@@ -1,11 +1,3 @@
-//
-//  Minesweeper.swift
-//  Minesweeper
-//
-//  Created by Andrew Muncey on 20/04/2016.
-//  Copyright © 2016 Andrew Muncey. All rights reserved.
-//
-
 import Foundation
 
 struct MineInfo {
@@ -15,13 +7,13 @@ struct MineInfo {
 
 class MineField {
     
-    var hasStarted = false
-    var isExploded = false
-    var mineCount = 0
-    var field = Array<Array<MineInfo>>()
+    private(set) var hasStarted = false
+    private(set) var isExploded = false
+    private(set) var mineCount = 0
+    private var field = Array<Array<MineInfo>>()
     
-    var width: Int
-    var height: Int
+    private var width: Int
+    private var height: Int
     
     init(width: Int, height: Int){
         
@@ -54,14 +46,13 @@ class MineField {
         return mineInfo
     }
     
-    func determineMinesWithStart(point: Point){
-       
+    private func determineMinesWithStart(point: Point){
         mineCount = Int(sqrt(Double(width * height)))
         populateMines(mineCount, avoidingPoint: point)
         populateAdjacentMineCount()
     }
     
-    func populateMines(_ count: Int, avoidingPoint startPoint: Point){
+    private func populateMines(_ count: Int, avoidingPoint startPoint: Point){
         var mineLocations = [Point]()
         repeat {
             let randPoint = getRandomPoint(width: width, height: height)
@@ -88,7 +79,7 @@ class MineField {
         return mines
     }
     
-    func validNeighboursFor(point: Point) -> [Point] {
+    private func validNeighboursFor(point: Point) -> [Point] {
         
         var neighbours = [Point]()
         let minX = max(0,point.x - 1)
@@ -106,7 +97,7 @@ class MineField {
         return neighbours
     }
     
-    func countMinesAt(points: [Point]) -> Int{
+    private func countMinesAt(points: [Point]) -> Int{
         
         var count = 0
         for point in points {
@@ -117,7 +108,7 @@ class MineField {
         return count
     }
     
-    func populateAdjacentMineCount(){
+    private func populateAdjacentMineCount(){
         
         for y in 0..<field.count {
             for x in 0..<field[y].count{
@@ -130,9 +121,9 @@ class MineField {
         
     }
     
-    func getRandomPoint(width: Int, height: Int) -> Point{
-        let x = Int(arc4random_uniform(UInt32(width)))
-        let y = Int(arc4random_uniform(UInt32(height)))
+    private func getRandomPoint(width: Int, height: Int) -> Point{
+        let x = Int.random(in: 0..<width)
+        let y = Int.random(in: 0..<height)
         return Point(x: x, y: y)
     }
 }

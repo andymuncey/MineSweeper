@@ -69,9 +69,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func checkMine4_3() { check(point:Point(x: 3, y: 4)) }
     @IBAction func checkMine4_4() { check(point:Point(x: 4, y: 4)) }
     
-    @IBAction func resetPressed()
-    {
-
+    @IBAction func resetPressed() {
         if flag {toggleFlag()}
         minefield = MineField(width: 5, height: 5)
         
@@ -82,16 +80,17 @@ class InterfaceController: WKInterfaceController {
         }
         flaggedCells = [WKInterfaceButton]()
         clearedCells = [WKInterfaceButton]()
-        mineCountLabel.setText("5 x")
+        updateMineCountLabel()
     }
     
     @IBAction func toggleFlag() {
         if minefield.hasStarted{
-            flag = !flag
+            flag.toggle()
             flagButton.setBackgroundColor(flag ? UIColor.red : UIColor.clear)
         }
     }
     
+
     var flag = false
     var possibleMines = Array<Array<WKInterfaceButton>>()
     var minefield = MineField(width: 5, height: 5)
@@ -130,7 +129,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     func checkForCompletion(){
-        if clearedCells.count + flaggedCells.count == 25 {
+        if clearedCells.count + min(flaggedCells.count,minefield.mineCount) == 25 {
             mineCountLabel.setText("👍")
             WKInterfaceDevice().play(.success)
         }
@@ -159,8 +158,8 @@ class InterfaceController: WKInterfaceController {
     }
     
     func updateMineCountLabel(){
-        let estimatedMinesLeft = minefield.mineCount - flaggedCells.count
-        mineCountLabel.setText("\(estimatedMinesLeft) x")
+        let minesLeft = minefield.mineCount - flaggedCells.count
+        mineCountLabel.setText("\(minesLeft) x")
     }
     
     override func willActivate() {
@@ -168,8 +167,6 @@ class InterfaceController: WKInterfaceController {
         for _ in 0..<5{
             possibleMines.append([WKInterfaceButton]())
         }
-        
-        
         
         //add mines to array
         possibleMines[0].append(mineSpace0_0)
