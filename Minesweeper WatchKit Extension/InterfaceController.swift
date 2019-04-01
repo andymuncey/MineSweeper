@@ -70,7 +70,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func checkMine4_4() { check(point:Point(x: 4, y: 4)) }
     
     @IBAction func resetPressed() {
-        if flag {toggleFlag()}
+        if flagging {toggleFlagging()}
         minefield = MineField(width: 5, height: 5)
         
         for row in possibleMines {
@@ -83,21 +83,20 @@ class InterfaceController: WKInterfaceController {
         updateMineCountLabel()
     }
     
-    @IBAction func toggleFlag() {
+    @IBAction func toggleFlagging() {
         if minefield.hasStarted{
-            flag.toggle()
-            flagButton.setBackgroundColor(flag ? UIColor.red : UIColor.clear)
+            flagging.toggle()
+            flagButton.setBackgroundColor(flagging ? UIColor.red : UIColor.clear)
         }
     }
     
-
-    var flag = false
-    var possibleMines = Array<Array<WKInterfaceButton>>()
-    var minefield = MineField(width: 5, height: 5)
-    var flaggedCells = [WKInterfaceButton]()
-    var clearedCells = [WKInterfaceButton]()
+    private var flagging = false
+    private var possibleMines = Array<Array<WKInterfaceButton>>()
+    private var minefield = MineField(width: 5, height: 5)
+    private var flaggedCells = [WKInterfaceButton]()
+    private var clearedCells = [WKInterfaceButton]()
     
-    func check(point: Point){
+    private func check(point: Point){
         
         if minefield.isExploded {
             return
@@ -105,12 +104,12 @@ class InterfaceController: WKInterfaceController {
         
         let cell = possibleMines[point.y][point.x]
         
-        if !flag && flaggedCells.contains(cell){
+        if !flagging && flaggedCells.contains(cell){
             deFlag(cell: cell)
             return
         }
         
-        if flag && !clearedCells.contains(cell) {
+        if flagging && !clearedCells.contains(cell) {
             flag(cell: cell)
             checkForCompletion()
             return
@@ -128,28 +127,28 @@ class InterfaceController: WKInterfaceController {
         checkForCompletion()
     }
     
-    func checkForCompletion(){
+    private func checkForCompletion(){
         if clearedCells.count + min(flaggedCells.count,minefield.mineCount) == 25 {
             mineCountLabel.setText("👍")
             WKInterfaceDevice().play(.success)
         }
     }
     
-    func showAllMines(){
+    private func showAllMines(){
         for minePoint in minefield.mineLocations() {
             possibleMines[minePoint.y][minePoint.x].setTitle("💣")
             mineCountLabel.setText("0 x")
         }
     }
     
-    func deFlag(cell: WKInterfaceButton){
+    private func deFlag(cell: WKInterfaceButton){
         //clearing a flag from a cell
         cell.setTitle("")
         flaggedCells.remove(at: flaggedCells.index(of: cell)!)
         updateMineCountLabel()
     }
     
-    func flag(cell: WKInterfaceButton){
+    private func flag(cell: WKInterfaceButton){
         if !flaggedCells.contains(cell){
             cell.setTitle("🇰🇵")
             flaggedCells.append(cell)
@@ -157,18 +156,17 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func updateMineCountLabel(){
+    private func updateMineCountLabel(){
         let minesLeft = minefield.mineCount - flaggedCells.count
         mineCountLabel.setText("\(minesLeft) x")
     }
     
-    override func willActivate() {
-        
+    override func awake(withContext context: Any?) {
         for _ in 0..<5{
             possibleMines.append([WKInterfaceButton]())
         }
         
-        //add mines to array
+        //add buttons to array
         possibleMines[0].append(mineSpace0_0)
         possibleMines[0].append(mineSpace0_1)
         possibleMines[0].append(mineSpace0_2)
@@ -198,8 +196,6 @@ class InterfaceController: WKInterfaceController {
         possibleMines[4].append(mineSpace4_2)
         possibleMines[4].append(mineSpace4_3)
         possibleMines[4].append(mineSpace4_4)
-        
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
     }
+
 }
