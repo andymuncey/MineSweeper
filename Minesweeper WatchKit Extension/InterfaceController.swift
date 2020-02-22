@@ -144,7 +144,7 @@ class InterfaceController: WKInterfaceController {
     private func deFlag(cell: WKInterfaceButton){
         //clearing a flag from a cell
         cell.setTitle("")
-        flaggedCells.remove(at: flaggedCells.index(of: cell)!)
+        flaggedCells.remove(at: flaggedCells.firstIndex(of: cell)!)
         updateMineCountLabel()
     }
     
